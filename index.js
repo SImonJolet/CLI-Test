@@ -17,11 +17,16 @@ let boxquestion1 = gradient.rainbow(boxen(`Aimez-vous les "Fun Facts " ??`, {
     borderStyle: 'double',
     align: 'center'
 }));
-let aimezvousoui = gradient.rainbow(boxen('      Haaaaaaaa, parfait !! \n Et préférez-vous les dates ou les chiffres ?', {
+let aimezvousoui = gradient.rainbow(boxen('Haaaaaaaa, parfait !! \n Et préférez-vous les dates ou les chiffres ?', {
     padding: 1,
     borderStyle: 'double',
     align: 'center'
-}))
+}));
+let jourOuAnnée = gradient.instagram(boxen('Maintentant le plus dur !! \n Choisissez entre un jour et une année <(^_^)>', {
+    padding: 1,
+    borderStyle: 'double',
+    align: 'center'
+}));
 
 
 //Sortie dans le terminal
@@ -52,6 +57,14 @@ prompt.get(aimezvous, function (err, result) {
         inquirer.prompt(choixAprèsAimezVousOui).then(answers => {
             console.log('\nOrder receipt:');
             log(JSON.stringify(answers, null, ' '));
+            if (answers.choixAprèsAimezVousOui == 'Les dates') {
+                console.log(jourOuAnnée);
+                let choixJourAnnée = {
+                    type: 'list',
+                    name: 'choixJourAnnée',
+                    choices: ["Go for les jours !!! Les années c'est beaucoup trop long", "Les jours ça passe trop vite, moi je suis team année !! (ง •̀_•́)ง "]
+                }
+            };
 
         })
     }
