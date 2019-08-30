@@ -7,6 +7,7 @@ const boxen = require('boxen');
 const chalk = require('chalk');
 const gradient = require('gradient-string');
 const prompt = require('prompt');
+const inquirer = require('inquirer');
 const log = console.log;
 
 
@@ -32,8 +33,8 @@ prompt.start();
 
 let aimezvous = {
     name: 'aimezvous',
-    validator: /oui*|non?/,
-    warning: 'Vous devez répondre oui ou non !!',
+    validator: /oui*|non*|bof?/,
+    warning: 'Vous devez répondre oui, non ou bof !!',
     //    default: 'oui'
 };
 
@@ -43,6 +44,7 @@ prompt.get(aimezvous, function (err, result) {
     log("résultat: " + result.aimezvous);
     if (result.aimezvous === "oui") {
         console.log(aimezvousoui);
+
 
     }
 });
