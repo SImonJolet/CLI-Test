@@ -24,10 +24,10 @@ prompt.start();
 
 let aimezvous = {
     name: 'yesno',
-    message: 'are you sure ?',
-    validator: /y[yes]*|n[o]?/,
-    warning: 'Must respond yes or no',
-    default: 'no'
+    message: 'Vous êtes sûr ?',
+    validator: /oui*|non?/,
+    warning: 'Vous devez répondre oui ou non !!',
+    //    default: 'oui'
 };
 
 
