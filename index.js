@@ -10,21 +10,28 @@ const prompt = require('prompt');
 const log = console.log;
 
 
-//Définition des variables
-//let textearcenciel = gradient.rainbow("Essai de texte en arc en ciel");
-let boxtextrainbow = gradient.rainbow(boxen("Aimez-vous les chiffres ??"));
+//Définition des textes de question
+let boxquestion1 = gradient.rainbow(boxen(`Aimez-vous les "Fun Facts " ??`, {
+    padding: 1,
+    borderStyle: 'double',
+    align: 'center'
+}));
+let aimezvousoui = gradient.rainbow(boxen('      Haaaaaaaa, parfait !! \n Et préférez-vous les dates ou les chiffres ?', {
+    padding: 1,
+    borderStyle: 'double',
+    align: 'center'
+}))
 
 
 //Sortie dans le terminal
-log(boxtextrainbow);
+log(boxquestion1);
 
 //essai prompt
 
 prompt.start();
 
 let aimezvous = {
-    name: 'yesno',
-    message: 'Vous êtes sûr ?',
+    name: 'aimezvous',
     validator: /oui*|non?/,
     warning: 'Vous devez répondre oui ou non !!',
     //    default: 'oui'
@@ -33,5 +40,9 @@ let aimezvous = {
 
 prompt.get(aimezvous, function (err, result) {
     log("Texte reçu");
-    log("résultat: " + result.yesno);
-})
+    log("résultat: " + result.aimezvous);
+    if (result.aimezvous === "oui") {
+        console.log(aimezvousoui);
+
+    }
+});
