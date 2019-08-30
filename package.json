@@ -1,0 +1,19 @@
+{
+  "name": "cli-test",
+  "version": "1.0.0",
+  "description": "###Testing excercice to practice node.js-cli with user-interaction.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SImonJolet/CLI-Test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SImonJolet/CLI-Test/issues"
+  },
+  "homepage": "https://github.com/SImonJolet/CLI-Test#readme"
+}
