@@ -32,29 +32,29 @@ let jourOuAnnée = gradient.instagram(boxen('Maintentant le plus dur !! \n Chois
 //Sortie dans le terminal
 log(boxquestion1);
 
-//essai prompt
+//Première question
 
 prompt.start();
 
 let aimezvous = {
     name: 'aimezvous',
-    validator: /oui*|non*|bof?/,
-    warning: 'Vous devez répondre oui, non ou bof !!',
-    //    default: 'oui'
+    validator: /oui*|non*|bof?/, //entrées valides NB: on en met aurant qu'on veut
+    warning: 'Vous devez répondre oui, non ou bof !!', //message si l'user n'entre pas une réponse valide, cf ligne "validator"
+    default: 'oui'
 };
 
 
-prompt.get(aimezvous, function (err, result) {
+prompt.get(aimezvous, function (err, result) { //affichage de la ligne d'encodage pour l'user et fonction pour la réception de la réponse.
     log("Texte reçu");
     log("résultat: " + result.aimezvous);
     if (result.aimezvous === "oui") {
-        console.log(aimezvousoui);
-        let choixAprèsAimezVousOui = {
+        console.log(aimezvousoui); //box pour la question en cas de oui
+        let choixAprèsAimezVousOui = { //création d'un qcm
             type: 'list',
             name: "choixAprèsAimezVousOui",
             choices: ['Les dates', 'Les chiffres'],
         };
-        inquirer.prompt(choixAprèsAimezVousOui).then(answers => {
+        inquirer.prompt(choixAprèsAimezVousOui).then(answers => { //appel du qcm avec inquirer 
             console.log('\nOrder receipt:');
             log(JSON.stringify(answers, null, ' '));
             if (answers.choixAprèsAimezVousOui == 'Les dates') {
@@ -63,7 +63,10 @@ prompt.get(aimezvous, function (err, result) {
                     type: 'list',
                     name: 'choixJourAnnée',
                     choices: ["Go for les jours !!! Les années c'est beaucoup trop long", "Les jours ça passe trop vite, moi je suis team année !! (ง •̀_•́)ง "]
-                }
+                };
+                inquirer.prompt(choixJourAnnée).then(answers => {
+                    //log(entrezUneDate)
+                })
             };
 
         })
