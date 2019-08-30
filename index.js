@@ -44,7 +44,15 @@ prompt.get(aimezvous, function (err, result) {
     log("résultat: " + result.aimezvous);
     if (result.aimezvous === "oui") {
         console.log(aimezvousoui);
+        let choixAprèsAimezVousOui = {
+            type: 'list',
+            name: "choixAprèsAimezVousOui",
+            choices: ['Les dates', 'Les chiffres'],
+        };
+        inquirer.prompt(choixAprèsAimezVousOui).then(answers => {
+            console.log('\nOrder receipt:');
+            log(JSON.stringify(answers, null, ' '));
 
-
+        })
     }
 });
